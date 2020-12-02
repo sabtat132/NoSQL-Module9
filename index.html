@@ -1,0 +1,97 @@
+<!<!DOCTYPE html>
+<html lang = "en">
+<head>
+    <title>NoSQL</title>
+</head>
+<body>
+    <h1 id="phrase"></h1>
+    <h1 id="userName"></h1>
+    <h1 id="userBirthMonth"></h1>
+    <h1 id="userCar"></h1>
+    <h1 id="userFrom"></h1>
+    <h1 id="userGrad"></h1>
+    <h1 id="userMajor"></h1>
+    <h1 id="userMinor"></h1>
+    <h1 id="userNationality"></h1>
+    <h1 id="userOccupation"></h1>
+
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+       https://firebase.google.com/docs/web/setup#available-libraries -->
+  <script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-analytics.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyA2OseBMb23gTJDNtNWH40XFm8BRQo7z4c",
+      authDomain: "nosql-test-1a94e.firebaseapp.com",
+      databaseURL: "https://nosql-test-1a94e.firebaseio.com",
+      projectId: "nosql-test-1a94e",
+      storageBucket: "nosql-test-1a94e.appspot.com",
+      messagingSenderId: "431043085534",
+      appId: "1:431043085534:web:ebe45c5ed18e0499af2e4f",
+      measurementId: "G-V6JKZGLZRK"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    //firebase.analytics();
+
+    //phrase
+    var phrase = document.getElementById('phrase');
+    var dbRef = firebase.database().ref().child('text');
+    dbRef.on('value', snap=> phrase.innerText = snap.val());
+
+    //userName
+    var userName = document.getElementById('userName');
+    var dbRef = firebase.database().ref().child('name');
+    dbRef.on('value', snap=> userName.innerText = snap.val());
+
+    //userBirthMonth
+    var userBirthMonth = document.getElementById('userBirthMonth');
+    var dbRef = firebase.database().ref().child('birthMonth');
+    dbRef.on('value', snap=> userBirthMonth.innerText = snap.val());
+
+    //userCar
+    var userCar = document.getElementById('userCar');
+    var dbRef = firebase.database().ref().child('car');
+    dbRef.on('value', snap=> userCar.innerText = snap.val());
+
+    //from
+    var userFrom = document.getElementById('userFrom');
+    var dbRef = firebase.database().ref().child('from');
+    dbRef.on('value', snap=> userFrom.innerText = snap.val());
+
+    //grad
+    var userGrad = document.getElementById('userGrad');
+    var dbRef = firebase.database().ref().child('gradYear');
+    dbRef.on('value', snap=> userGrad.innerText = snap.val());
+
+    //major
+    var userMajor = document.getElementById('userMajor');
+    var dbRef = firebase.database().ref().child('major');
+    dbRef.on('value', snap=> userMajor.innerText = snap.val());
+
+    //minor
+    var userMinor = document.getElementById('userMinor');
+    var dbRef = firebase.database().ref().child('minor');
+    dbRef.on('value', snap=> userMinor.innerText = snap.val());
+
+    //nationality
+    var userNationality = document.getElementById('userNationality');
+    var dbRef = firebase.database().ref().child('nationality');
+    dbRef.on('value', snap=> userNationality.innerText = snap.val());
+
+    //occupation
+    var userOccupation = document.getElementById('userOccupation');
+    var dbRef = firebase.database().ref().child('occupation');
+    dbRef.on('value', snap=> userOccupation.innerText = snap.val());
+
+
+  </script>
+
+</body>
+</html>
